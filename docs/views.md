@@ -6,21 +6,21 @@
 ## New Session
 ![new-session]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Photos Index
+![photos-index]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Photo Show
+![photo-show]
 
-## NoteBookForm
-![notebook-form]
+## User Show
+![user-show]
 
-## Component Heirarchy
-![component-heirarchy]
+## Area Show
+![area-show]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
-[component-heirarchy]: ./wireframes/component_heirarchy.png
+[new-user]: ./wireframes/image1.jpg
+[new-session]: ./wireframes/image2.jpg
+[photos-index]: ./wireframes/image3.jpg
+[photo-show]: ./wireframes/image4.jpg
+[user-show]: ./wireframes/image5.jpg
+[area-show]: ./wireframes/image6.jpg
