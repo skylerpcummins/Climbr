@@ -18,9 +18,9 @@
 ## Area Show
 ![area-show]
 
-[new-user]: ./wireframes/image1.jpg
-[new-session]: ./wireframes/image2.jpg
-[photos-index]: ./wireframes/image3.jpg
-[photo-show]: ./wireframes/image4.jpg
-[user-show]: ./wireframes/image5.jpg
-[area-show]: ./wireframes/image6.jpg
+[new-user]: ./wireframes/image1.JPG
+[new-session]: ./wireframes/image2.JPG
+[photos-index]: ./wireframes/image3.JPG
+[photo-show]: ./wireframes/image4.JPG
+[user-show]: ./wireframes/image5.JPG
+[area-show]: ./wireframes/image6.JPG
