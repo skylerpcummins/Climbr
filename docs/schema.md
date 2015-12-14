@@ -1,51 +1,58 @@
 # Schema Information
 
-## notes
+## users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+email           | string    | not null, indexed, unique
+password_digest | string    | not null
+session_token   | string    | not null, indexed, unique
+
+## photos
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+description | text      |
+lat         | float     |
+lng         | float     |
+area_id     | integer   | foreign key (references areas), indexed
+user_id     | integer   | foreign key (references users), indexed
 
-## notebooks
+## areas
+column name  | data type | details
+-------------|-----------|-----------------------
+id           | integer   | not null, primary key
+name         | string    | not null
+description  | text      | not null
+lat          | float     | not null
+lng          | float     | not null
+moderator_id | float     | not null, foreign key (references users), indexed
+
+## area_photos
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
+photo_id    | integer   | not null, foreign key (references photos), indexed
+area_id     | integer   | not null, foreign key (references areas), indexed
 
-## reminders
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+## comments
+column name  |           | details
+-------------|-----------|----------------------
+id           | integer   | not null, primary key
+photo_id     | integer   | not null, foreign key (references photos), indexed
+user_id      | integer   | not null, foreign key (references users), indexed
+body         | text      | not null
 
 ## tags
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
+label       | string    | not null
 
 ## taggings
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
+photo_id    | integer   | not null, foreign key (references photos), indexed
 tag_id      | integer   | not null, foreign key (references tags), indexed
-
-## users
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-username        | string    | not null, indexed, unique
-password_digest | string    | not null
-session_token   | string    | not null, indexed, unique
