@@ -1,44 +1,44 @@
-# Phase 3: Notebooks and Tags (2 days)
+# Phase 3: Areas and Tags (2-3 days)
 
 ## Rails
 ### Models
-* Notebook
+* Area
 * Tag
 * Tagging
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::AreasController (create, destroy, index, show, update)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
+* areas/index.json.jbuilder
+* areas/show.json.jbuilder
 * tags/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
-* SearchIndex
+* AreasIndex
+  - AreaIndexItem
+  - AreaDetail
+* AreaForm
 
 ### Stores
-* Notebook
+* Area
 
 ### Actions
-* ApiActions.receiveAllNotebooks -> triggered by ApiUtil
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
-* NotebookActions.fetchAllNotebooks -> triggers ApiUtil
-* NotebookActions.fetchSingleNotebook
-* NotebookActions.createNotebook
-* NotebookActions.editNotebook
-* NotebookActions.destroyNotebook
+* ApiActions.receiveAllAreas -> triggered by ApiUtil
+* ApiActions.receiveSingleArea
+* ApiActions.deleteArea
+* AreaActions.fetchAllAreas -> triggers ApiUtil
+* AreaActions.fetchSingleArea
+* AreaActions.createArea
+* AreaActions.editArea
+* AreaActions.destroyArea
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* ApiUtil.fetchAllAreas
+* ApiUtil.fetchSingleArea
+* ApiUtil.createArea
+* ApiUtil.editArea
+* ApiUtil.destroyArea
 
 ## Gems/Libraries
