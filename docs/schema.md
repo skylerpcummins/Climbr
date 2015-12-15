@@ -16,6 +16,7 @@ title       | string    | not null
 description | text      |
 lat         | float     |
 lng         | float     |
+photo_url   | string    | not null
 area_id     | integer   | foreign key (references areas), indexed
 user_id     | integer   | foreign key (references users), indexed
 
@@ -28,13 +29,6 @@ description  | text      | not null
 lat          | float     | not null
 lng          | float     | not null
 moderator_id | float     | not null, foreign key (references users), indexed
-
-## area_photos
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-photo_id    | integer   | not null, foreign key (references photos), indexed
-area_id     | integer   | not null, foreign key (references areas), indexed
 
 ## comments
 column name  |           | details

@@ -35,3 +35,4 @@
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)
+* Cloudinary
