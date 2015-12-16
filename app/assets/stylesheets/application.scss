@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.jumbotron {
+  text-align: center;
+  background: transparentize(blue, .5);
+  color: white;
+  border-radius: 6px;
+}
+
+.climbr-title {
+  margin-top: 130px;
+  text-align: center;
+  color: white;
+}
+
+.container-auth {
+  background-image: url(paradox_topout.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-auth:after {
+  content: "";
+  display: block;
+  clear: both;
+}

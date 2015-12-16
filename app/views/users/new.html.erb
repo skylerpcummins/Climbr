@@ -1,0 +1,30 @@
+<body class="container-auth">
+
+  <%= error_helper %>
+
+  <div class="climbr-title">
+    <h1>Welcome to Climbr...</h1>
+  </div>
+
+  <div class="jumbotron col-xs-offset-4 col-xs-4">
+    <h2>Sign Up</h2>
+    <form class="form-group" action="<%= users_url %>" method="post">
+      <%= auth_token %>
+
+      <div class="form-group">
+        <label>Email
+          <input type="text" class="form-control" name="user[email]" placeholder="email">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Password
+          <input type="password" class="form-control" name="user[password]" placeholder="password">
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+
+    </form>
+  </div>
+</body>
