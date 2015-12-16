@@ -2,6 +2,7 @@ var React = require('react');
 var PhotoStore = require('../stores/photo');
 var ApiUtil = require('../util/api_util');
 var PhotoIndexItem = require('./photo_index_item')
+var ComponentGallery = require('react-component-gallery');
 
 var PhotoIndex = React.createClass({
 
@@ -27,13 +28,20 @@ var PhotoIndex = React.createClass({
   render: function() {
     var photosGrid = this.state.photos.map( function(photo) {
       return (
-        <PhotoIndexItem key={photo.id} photo={photo} />
+        <img src={photo.photo_url} />
       )
     });
 
     return (
       <div>
-        {photosGrid}
+        <ComponentGallery
+          className="photos-index"
+          margin={10}
+          noMarginBottomOnLastRow={true}
+          targetWidth={400}>
+            {photosGrid}
+        </ComponentGallery>
+
       </div>
     );
   }
