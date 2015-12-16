@@ -1,8 +1,9 @@
 var React = require('react');
 var PhotoStore = require('../stores/photo');
 var ApiUtil = require('../util/api_util');
+var PhotoIndexItem = require('./photo_index_item')
 
-var Index = React.createClass({
+var PhotoIndex = React.createClass({
 
   getInitialState: function() {
     return { photos: PhotoStore.all() }
@@ -20,14 +21,23 @@ var Index = React.createClass({
 
   componentDidMount: function() {
     this.photoToken = PhotoStore.addListener(this._updateState);
+    ApiUtil.fetchPhotos();
   },
 
   render: function() {
+    var photosGrid = this.state.photos.map( function(photo) {
+      return (
+        <PhotoIndexItem key={photo.id} photo={photo} />
+      )
+    });
+
     return (
-      <div>Climbr Index!</div>
+      <div>
+        {photosGrid}
+      </div>
     );
   }
 
 });
 
-module.exports = Index;
+module.exports = PhotoIndex;
