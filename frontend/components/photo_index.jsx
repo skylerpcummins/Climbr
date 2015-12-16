@@ -1,8 +1,11 @@
 var React = require('react');
 var PhotoStore = require('../stores/photo');
 var ApiUtil = require('../util/api_util');
-var PhotoIndexItem = require('./photo_index_item')
-var ComponentGallery = require('react-component-gallery');
+var Masonry = require('react-masonry-component')(React);
+
+var masonryOptions = {
+  transitionDuration: 0
+};
 
 var PhotoIndex = React.createClass({
 
@@ -28,24 +31,20 @@ var PhotoIndex = React.createClass({
   render: function() {
     var photosGrid = this.state.photos.map( function(photo) {
       return (
-        <img src={photo.photo_url} />
-      )
+        <div>
+          <img src={photo.photo_url} />
+        </div>
+      );
     });
 
     return (
-      <div>
-        <ComponentGallery
-          className="photos-index"
-          margin={10}
-          noMarginBottomOnLastRow={true}
-          targetWidth={400}>
+        <Masonry
+          options={masonryOptions}
+          disableImagesLoaded={false}>
             {photosGrid}
-        </ComponentGallery>
-
-      </div>
+        </Masonry>
     );
   }
-
 });
 
 module.exports = PhotoIndex;
