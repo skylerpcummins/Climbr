@@ -19,7 +19,7 @@ var Navbar = React.createClass({
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              <li className="active"><a href="#">You<span className="sr-only">(current)</span></a></li>
+              <li className="active"><a href="#link to window.current_user url thingy">You<span className="sr-only">(current)</span></a></li>
               <li><a href="#">Explore</a></li>
             </ul>
             <form className="navbar-form navbar-left" role="search">
