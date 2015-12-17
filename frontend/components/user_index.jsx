@@ -4,10 +4,6 @@ var ApiUtil = require('../util/api_util');
 var Masonry = require('react-masonry-component')(React);
 var History = require('react-router').History;
 
-var masonryOptions = {
-  transitionDuration: 0
-};
-
 var UserIndex = React.createClass({
   mixins: [History],
 
@@ -43,13 +39,7 @@ var UserIndex = React.createClass({
       );
     }.bind(this));
 
-    return (
-        <Masonry
-          options={masonryOptions}
-          disableImagesLoaded={false}>
-            {photosGrid}
-        </Masonry>
-    );
+    return ( <Masonry>{photosGrid}</Masonry> );
   }
 });
 

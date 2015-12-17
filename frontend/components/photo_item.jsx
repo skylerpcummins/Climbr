@@ -6,6 +6,7 @@ var PhotoItem = React.createClass({
 
   getStateFromStore: function() {
     return { photo: PhotoStore.find(parseInt(this.props.params.id))};
+    console.log(photo);
   },
 
   _onChange: function() {
@@ -30,7 +31,7 @@ var PhotoItem = React.createClass({
   },
 
   render: function() {
-
+    console.log(this.state);
     if (this.state.photo === undefined) { return <div></div>; }
 
     return (

@@ -44,13 +44,7 @@ var PhotoIndex = React.createClass({
       );
     }.bind(this));
 
-    return (
-        <Masonry
-          options={masonryOptions}
-          disableImagesLoaded={false}>
-            {photosGrid}
-        </Masonry>
-    );
+    return ( <Masonry>{photosGrid}</Masonry> );
   }
 });
 

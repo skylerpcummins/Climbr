@@ -26,6 +26,9 @@ PhotoStore.__onDispatch = function (payload) {
       PhotoStore.__emitChange();
       break;
   }
+
+  //might need another case for single photos later on
+  //image doesnt show up after refreshing show page... need another store?
 };
 
 module.exports = PhotoStore;

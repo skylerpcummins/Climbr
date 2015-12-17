@@ -19,3 +19,5 @@ Photo.create({title: 'Van Life', photo_url: 'http://static1.squarespace.com/stat
 Photo.create({title: 'Chaffee County Campsite', photo_url: 'http://static1.squarespace.com/static/53e3fbc3e4b0b8dd830e3570/543f58bce4b076f3653c5902/54ceff3ce4b01fa0f0c0217e/1422851901053/GuinnPhotography-5.jpg?format=750w', user_id: 2})
 Photo.create({title: 'Camp 4 Messageboard', photo_url: 'http://static1.squarespace.com/static/53e3fbc3e4b0b8dd830e3570/543f58bce4b076f3653c5902/543f5934e4b0e172550337a4/1413437763925/valleylife-1.jpg?format=500w', user_id: 2})
 Photo.create({title: 'The Sentinel Reflection', photo_url: 'http://static1.squarespace.com/static/53e3fbc3e4b0b8dd830e3570/543f5f3fe4b0e17255033fd9/54408f3de4b02f1c0e51337d/1413517129399/landscape+%281+of+1%29-2.jpg?format=750w', user_id: 2})
+User.create({email: 'skylerpcummins@gmail.com', password_digest: '$2a$10$Hy5K4vY64utMPy2Wetwpe.08eba45kXCde5G/KbSdyaEE4BscZWfa'})
+User.create({email: 'macklin@test.com', password_digest: '$2a$10$6OHzi1RNCt9ISJd/bVPSs.9QsbG.HeSI31GYYmgvFIaOdbDtyG3Fy'})

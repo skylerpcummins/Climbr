@@ -1,5 +1,4 @@
 var React = require('react');
-var LogOutButton = require('./log_out_button');
 var History = require('react-router').History;
 
 var Navbar = React.createClass({
@@ -7,6 +6,18 @@ var Navbar = React.createClass({
 
   showUser: function() {
     this.history.pushState(null, '/users/' + window.current_user, {});
+  },
+
+  signOut: function(e) {
+    e.preventDefault();
+
+    $.ajax({
+      url: "/session",
+      method: "DELETE",
+      success: function() {
+        window.location = '/'
+      }
+    });
   },
 
   render: function() {
@@ -34,9 +45,7 @@ var Navbar = React.createClass({
               <li className="dropdown">
                 <a href="" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span className="caret"></span></a>
                   <ul className="dropdown-menu">
-                    <li>
-                      <LogOutButton />
-                    </li>
+                  <li className="show-user"><a onClick={this.signOut}>Sign Out</a></li>
                   <li className="show-user"><a onClick={this.showUser}>Profile</a></li>
                 </ul>
               </li>

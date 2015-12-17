@@ -17,7 +17,7 @@ ApiUtil = {
       success: function(photo) {
         ApiActions.receiveSinglePhoto(photo);
       }
-    })
+    });
   }
 }
 
