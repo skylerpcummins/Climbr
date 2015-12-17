@@ -12,12 +12,13 @@ Climbr allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create account
-- [ ] Log in / out
+- [x] Create account
+- [x] Log in / out
 - [ ] Upload / remove photos
 - [ ] Create climbing area, add / remove photos
-- [ ] View image index page
-- [ ] View image show page
+- [x] View image index page
+- [x] View image show page
+- [x] View user show page
 - [ ] View area show page
 - [ ] Geotag images
 - [ ] Search / filter images by climbing area
