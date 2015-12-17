@@ -5,7 +5,6 @@ var PhotoIndex = require('./photo_index');
 var App = React.createClass({
 
   render: function () {
-    console.log("in app");
     return (
       <div id="climbr">
         <div className="photo-index-pane">

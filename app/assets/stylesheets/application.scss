@@ -46,8 +46,30 @@
   margin-bottom: 0;
 }
 
-img {
+.show-user {
+  cursor: pointer;
+}
+
+.photo-index-image {
   margin: 10px 0px 0px 10px;
   width: 100%;
   max-width: 300px;
+  cursor: pointer;
+}
+
+.user-index-image {
+  margin: 10px 0px 0px 10px;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.container-photo-item {
+  background-color: black;
+  text-align: center;
+  height: 100%;
+}
+
+.photo-item {
+  margin: 10px 10px 10px 10px;
 }

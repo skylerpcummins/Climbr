@@ -2,12 +2,15 @@ var React = require('react');
 var PhotoStore = require('../stores/photo');
 var ApiUtil = require('../util/api_util');
 var Masonry = require('react-masonry-component')(React);
+var PhotoItem = require('./photo_item');
+var History = require('react-router').History;
 
 var masonryOptions = {
   transitionDuration: 0
 };
 
 var PhotoIndex = React.createClass({
+  mixins: [History],
 
   getInitialState: function() {
     return { photos: PhotoStore.all() }
@@ -28,15 +31,18 @@ var PhotoIndex = React.createClass({
     ApiUtil.fetchPhotos();
   },
 
+  showPhoto: function(e) {
+    this.history.pushState({photo_id: e.target.id}, '/api/photos/' + e.target.id, {});
+  },
+
   render: function() {
-    console.log("in photo index");
     var photosGrid = this.state.photos.map( function(photo) {
       return (
-        <div key={photo.id}>
-          <img src={photo.photo_url} />
+        <div key={photo.id} onClick={this.showPhoto}>
+          <img className="photo-index-image" id={photo.id} src={photo.photo_url} />
         </div>
       );
-    });
+    }.bind(this));
 
     return (
         <Masonry

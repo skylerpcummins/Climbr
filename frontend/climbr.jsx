@@ -9,11 +9,13 @@ var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 var App = require('./components/app');
 var UserIndex = require('./components/user_index');
+var PhotoItem = require('./components/photo_item');
 
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={PhotoIndex} />
     <Route path="/users/:id" component={UserIndex} />
+    <Route path="/api/photos/:id" component={PhotoItem} />
   </Route>
 )
 

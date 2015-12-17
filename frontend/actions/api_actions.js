@@ -7,6 +7,13 @@ ApiActions = {
       actionType: PhotoConstants.PHOTOS_RECEIVED,
       photos: photos
     });
+  },
+
+  receiveSinglePhoto: function(photo) {
+    AppDispatcher.dispatch({
+      actionType: PhotoConstants.PHOTO_RECEIVED,
+      photo: photo
+    });
   }
 }
 
