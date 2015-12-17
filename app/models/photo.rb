@@ -6,5 +6,5 @@ class Photo < ActiveRecord::Base
     primary_key: :id,
     class_name: "User"
 
-    
+
 end

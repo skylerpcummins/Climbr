@@ -1,8 +1,9 @@
 var ApiActions = require('../actions/api_actions');
 
 ApiUtil = {
-  fetchPhotos: function(photos) {
-    $.get('api/photos', {}, function(photos){
+  fetchPhotos: function(id) {
+    console.log(id);
+    $.get('api/photos', {user_id: id}, function(photos){
       ApiActions.receiveAllPhotos(photos);
     });
   }

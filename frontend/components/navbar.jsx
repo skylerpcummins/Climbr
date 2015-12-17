@@ -32,9 +32,15 @@ var Navbar = React.createClass({
               <li><a href="#">Upload</a></li>
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span className="caret"></span></a>
-                <ul className="dropdown-menu">
-                  <li><a href="">Profile</a></li>
-                  <li><a href="#">Sign Out</a></li>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <form className="button_to" method="post" action="http://localhost:3000/session">
+                        <input type="hidden" name="_method" value="delete" />
+                        <input type="submit" value="Log Out" />
+                        <input type="hidden" name="authenticity_token" value={ $('meta[name="csrf-token"]').attr('content') } />
+                      </form>
+                    </li>
+                  <li><a href="#">Profile</a></li>
                 </ul>
               </li>
             </ul>

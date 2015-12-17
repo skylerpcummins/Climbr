@@ -7,7 +7,7 @@ var masonryOptions = {
   transitionDuration: 0
 };
 
-var PhotoIndex = React.createClass({
+var UserIndex = React.createClass({
 
   getInitialState: function() {
     return { photos: PhotoStore.all() }
@@ -20,16 +20,16 @@ var PhotoIndex = React.createClass({
   },
 
   componentWillUnmount: function() {
-    this.photoToken.remove();
+    this.userPhotoToken.remove();
   },
 
   componentDidMount: function() {
-    this.photoToken = PhotoStore.addListener(this._updateState);
-    ApiUtil.fetchPhotos();
+    this.userPhotoToken = PhotoStore.addListener(this._updateState);
+    ApiUtil.fetchPhotos(window.current_user);
   },
 
   render: function() {
-    console.log("in photo index");
+    console.log("in user index");
     var photosGrid = this.state.photos.map( function(photo) {
       return (
         <div key={photo.id}>
@@ -48,4 +48,4 @@ var PhotoIndex = React.createClass({
   }
 });
 
-module.exports = PhotoIndex;
+module.exports = UserIndex;
