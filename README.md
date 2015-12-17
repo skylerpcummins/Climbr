@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://www.climbrproject.herokuapp.com
+[heroku]: https://climbrproject.herokuapp.com
 
 ## Minimum Viable Product
 
