@@ -1,8 +1,8 @@
 # Climbr
 
-[Heroku link][heroku] **NB:** This will be a link to my production site
+[Heroku link][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://www.climbrproject.herokuapp.com
 
 ## Minimum Viable Product
 
