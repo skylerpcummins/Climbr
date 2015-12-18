@@ -1,11 +1,13 @@
 var React = require('react');
+var PhotoStore = require('../stores/photo');
+var PhotoActions = require('../actions/photo_actions');
 var History = require('react-router').History;
 
 var Navbar = React.createClass({
   mixins: [History],
 
   showUser: function() {
-    this.history.pushState(null, '/users/' + window.current_user, {});
+    this.history.pushState(null, '/users/' + window.current_user_id, {});
   },
 
   signOut: function(e) {
@@ -16,6 +18,15 @@ var Navbar = React.createClass({
       method: "DELETE",
       success: function() {
         window.location = '/'
+      }
+    });
+  },
+
+  uploadPhoto: function(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
+      if (!error) {
+        PhotoActions.postUploadedPhoto(results[0]);
       }
     });
   },
@@ -41,7 +52,7 @@ var Navbar = React.createClass({
               <button type="submit" className="btn btn-default">Submit</button>
             </form>
             <ul className="nav navbar-nav navbar-right">
-              <li><a onClick={cloudinary.openUploadWidget}>Upload</a></li>
+              <li className="upload-button"><a onClick={this.uploadPhoto}>Upload</a></li>
               <li className="dropdown">
                 <a href="" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span className="caret"></span></a>
                   <ul className="dropdown-menu">

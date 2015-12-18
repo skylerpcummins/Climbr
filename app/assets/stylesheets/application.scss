@@ -72,4 +72,17 @@
 
 .photo-item {
   margin: 10px 10px 10px 10px;
+  max-height: 610px;
+  max-width: auto;
+}
+
+.upload-button {
+  cursor: pointer;
+}
+
+.cover-photo {
+  margin-top: 10px;
+  background-image: url(user_panorama.jpg);
+  height: 20vh;
+  max-width: auto;
 }

@@ -10,7 +10,13 @@ var resetPhotos = function(photos) {
 };
 
 var addSinglePhoto = function(photo) {
-  if (_photos.indexOf(photo) === -1) {
+  var ids = []
+
+  _photos.forEach(function(photo) {
+    ids.push(photo.id)
+  });
+
+  if (ids.indexOf(photo.id) === -1) {
     _photos.push(photo);
   }
 };
@@ -35,8 +41,6 @@ PhotoStore.__onDispatch = function (payload) {
       break;
   }
 
-  //might need another case for single photos later on
-  //image doesnt show up after refreshing show page... need another store?
   PhotoStore.__emitChange();
 };
 

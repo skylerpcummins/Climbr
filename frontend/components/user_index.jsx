@@ -23,7 +23,7 @@ var UserIndex = React.createClass({
 
   componentDidMount: function() {
     this.userPhotoToken = PhotoStore.addListener(this._updateState);
-    ApiUtil.fetchPhotos(window.current_user);
+    ApiUtil.fetchPhotos(window.current_user_id);
   },
 
   showPhoto: function(e) {
@@ -39,7 +39,12 @@ var UserIndex = React.createClass({
       );
     }.bind(this));
 
-    return ( <Masonry>{photosGrid}</Masonry> );
+    return (
+      <div>
+        <div className="cover-photo">{window.current_user_email}</div>
+        <Masonry>{photosGrid}</Masonry>
+      </div>
+      );
   }
 });
 

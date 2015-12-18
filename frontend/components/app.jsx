@@ -1,5 +1,6 @@
 var React = require('react');
 var Navbar = require('./navbar');
+var PhotoIndex = require('./photo_index');
 
 var App = React.createClass({
 

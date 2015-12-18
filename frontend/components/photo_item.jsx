@@ -26,7 +26,7 @@ var PhotoItem = React.createClass({
 
   componentDidMount: function() {
     this.photoItemToken = PhotoStore.addListener(this._onChange);
-    ApiUtil.fetchPhotos();
+    ApiUtil.fetchSinglePhoto(this.props.params.id);
   },
 
   render: function() {
