@@ -5,8 +5,7 @@ var ApiUtil = require('../util/api_util');
 var PhotoItem = React.createClass({
 
   getStateFromStore: function() {
-    return { photo: PhotoStore.find(parseInt(this.props.params.id))};
-    console.log(photo);
+    return { photo: PhotoStore.find(parseInt(this.props.params.id)) };
   },
 
   _onChange: function() {
@@ -27,11 +26,10 @@ var PhotoItem = React.createClass({
 
   componentDidMount: function() {
     this.photoItemToken = PhotoStore.addListener(this._onChange);
-    ApiUtil.fetchSinglePhoto(parseInt(this.props.params.id));
+    ApiUtil.fetchPhotos();
   },
 
   render: function() {
-    console.log(this.state);
     if (this.state.photo === undefined) { return <div></div>; }
 
     return (
