@@ -41,7 +41,7 @@ var Navbar = React.createClass({
               <button type="submit" className="btn btn-default">Submit</button>
             </form>
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="/">Upload</a></li>
+              <li><a onClick={cloudinary.openUploadWidget}>Upload</a></li>
               <li className="dropdown">
                 <a href="" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span className="caret"></span></a>
                   <ul className="dropdown-menu">
