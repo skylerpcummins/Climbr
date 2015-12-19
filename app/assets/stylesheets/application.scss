@@ -44,6 +44,7 @@
 
 .navbar {
   margin-bottom: 0;
+  font-weight: bold;
 }
 
 .show-user {
@@ -83,6 +84,15 @@
 .cover-photo {
   margin-top: 10px;
   background-image: url(user_panorama.jpg);
-  height: 20vh;
+  height: 30vh;
   max-width: auto;
+  font-size: medium;
+  position: relative;
+}
+
+.user-show-email {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-weight: bold;
 }

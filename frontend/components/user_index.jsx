@@ -41,7 +41,9 @@ var UserIndex = React.createClass({
 
     return (
       <div>
-        <div className="cover-photo">{window.current_user_email}</div>
+        <div className="cover-photo">
+          <div className="user-show-email">{window.current_user_email}</div>
+        </div>
         <Masonry>{photosGrid}</Masonry>
       </div>
       );
