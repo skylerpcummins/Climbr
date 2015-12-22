@@ -22,9 +22,11 @@ ApiUtil = {
   postPhoto: function(photo) {
     var data = {
       photo: {
-        title: "placeholder for now",
+        title: photo.title,
+        description: photo.description,
         photo_url: photo.url,
-        user_id: window.current_user_id
+        user_id: photo.user_id,
+        area_id: photo.area_id
       }
     };
     $.post('/api/photos',

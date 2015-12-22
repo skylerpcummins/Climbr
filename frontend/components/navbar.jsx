@@ -29,10 +29,7 @@ var Navbar = React.createClass({
   uploadPhoto: function(e) {
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
-      if (!error) {
-        this.showPhotoFields(results[0])
-        // PhotoActions.postUploadedPhoto(results[0]); old way
-      }
+      if (!error) { this.showPhotoFields(results[0]) }
     }.bind(this));
   },
 
