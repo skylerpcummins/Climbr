@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :photos, only: [:index, :create, :show]
+    resources :areas, only: [:new, :show, :create, :index]
   end
 end

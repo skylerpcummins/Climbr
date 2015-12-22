@@ -65,16 +65,27 @@
   cursor: pointer;
 }
 
-.container-photo-item {
-  background-color: black;
-  text-align: center;
-  height: 100%;
+.container-map-photo {
+  display: inline-block;
 }
 
-.photo-item {
-  margin: 10px 10px 10px 10px;
-  max-height: 610px;
-  max-width: auto;
+.container-fluid-show {
+  text-align: center;
+  background-color: black;
+}
+
+.container-map-photo:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.img-responsive {
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  max-height: 90vh;
 }
 
 .upload-button {
@@ -95,4 +106,15 @@
   bottom: 10px;
   left: 10px;
   font-weight: bold;
+}
+
+.map {
+  float: left;
+  height: 2000px;
+  max-height: 90vh;
+  width: 400px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }

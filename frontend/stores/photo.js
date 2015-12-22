@@ -35,13 +35,13 @@ PhotoStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case PhotoConstants.PHOTOS_RECEIVED:
       resetPhotos(payload.photos);
+      PhotoStore.__emitChange();
       break;
     case PhotoConstants.PHOTO_RECEIVED:
       addSinglePhoto(payload.photo);
+      PhotoStore.__emitChange();
       break;
-  }
-
-  PhotoStore.__emitChange();
+  }  
 };
 
 module.exports = PhotoStore;

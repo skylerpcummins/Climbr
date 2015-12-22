@@ -1,6 +1,7 @@
 var React = require('react');
 var PhotoStore = require('../stores/photo');
 var ApiUtil = require('../util/api_util');
+var Map = require('./map');
 
 var PhotoItem = React.createClass({
 
@@ -30,12 +31,15 @@ var PhotoItem = React.createClass({
   },
 
   render: function() {
-    if (this.state.photo === undefined) { return <div></div>; }
+    if (typeof this.state.photo === 'undefined') { return <div></div>; }
 
     return (
-      <div className="container-photo-item">
-        <img className="photo-item" src={ this.state.photo.photo_url } />
-      </div>
+        <div className="container-fluid-show">
+          <div className="container-map-photo">
+            <img className="img-responsive" src={ this.state.photo.photo_url } />
+            <Map areaId={this.state.photo.area_id} />
+          </div>
+        </div>
     );
   }
 });

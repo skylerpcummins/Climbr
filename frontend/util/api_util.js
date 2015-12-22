@@ -32,6 +32,24 @@ ApiUtil = {
       function(savedPhoto) {
         ApiActions.receiveOnePhoto(savedPhoto);
     });
+  },
+
+  fetchAreas: function() {
+    $.get(
+      'api/areas',
+      {},
+      function(areas) {
+        ApiActions.receiveAllAreas(areas);
+    });
+  },
+
+  fetchSingleArea: function(id) {
+    $.get(
+      'api/areas/' + id,
+      {},
+      function(area) {
+        ApiActions.receiveOneArea(area);
+    });
   }
 }
 

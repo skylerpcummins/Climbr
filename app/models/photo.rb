@@ -6,5 +6,9 @@ class Photo < ActiveRecord::Base
     primary_key: :id,
     class_name: "User"
 
+  belongs_to :area,
+    foreign_key: :area_id,
+    primary_key: :id,
+    class_name: "Area"
 
 end
