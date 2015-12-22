@@ -31,6 +31,12 @@ AreaStore.find = function(id) {
   });
 };
 
+AreaStore.findByName = function(areaName) {
+  return _areas.find(function(area) {
+    return area.name === areaName
+  });
+};
+
 AreaStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case AreaConstants.AREAS_RECEIVED:

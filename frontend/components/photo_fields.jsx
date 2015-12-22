@@ -11,7 +11,7 @@ var PhotoFields = React.createClass({
     return {
       title: "",
       description: "",
-      area_id: 0,
+      area_name: "",
       url: this.props.location.state.url,
       user_id: window.current_user_id
     };
@@ -25,6 +25,7 @@ var PhotoFields = React.createClass({
   },
 
   render: function() {
+    console.log(this.state);
 
     return (
       <div className="jumbotron-upload" >
@@ -43,7 +44,7 @@ var PhotoFields = React.createClass({
 
           <div className="form-group">
             <label>Area
-              <input className="form-control" type="number" valueLink={this.linkState("area_id")} />
+              <AreasAutocomplete valueLink={this.linkState("area_name")} />
             </label>
           </div>
         </form>
