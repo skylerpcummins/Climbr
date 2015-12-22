@@ -5,29 +5,43 @@ var PhotoFields = React.createClass({
   saveAndContinue: function(e) {
     e.preventDefault();
 
+    // need to add photourl to this data
     var data = {
       title: this.refs.title.getDOMNode().value,
       description: this.refs.description.getDOMNode().value,
       areaId: this.refs.areaId.getDOMNode().value
     }
 
-    this.props.saveValues(data);
-    this.props.nextStep();
+    //PhotoActions.postUploadedPhoto(data)
   },
 
   render: function() {
+
+    console.log(this.props.location.state.url);
+
     return (
-      <div>
-        <label>Title</label>
-        <input type="text" ref="title" defaultValue={this.props.fieldValues.title} />
+      <div className="jumbotron-upload" >
+        <form className="form-group">
+          <div className="form-group">
+            <label>Title
+              <input className="form-control" type="text" ref="title" />
+            </label>
+          </div>
 
-        <label>Description</label>
-        <input type="text" ref="description" defaultValue={this.props.fieldValues.description} />
+          <div className="form-group">
+            <label>Description
+              <input className="form-control" type="text" ref="description" />
+            </label>
+          </div>
 
-        <label>Area</label>
-        <input type="number" ref="areaId" defaultValue={this.props.fieldValues.areaId} />
+          <div className="form-group">
+            <label>Area
+              <input className="form-control" type="number" ref="areaId" />
+            </label>
+          </div>
+        </form>
 
-        <button onClick={this.saveAndContinue}>Save and Continue</button>
+        <button className="btn btn-primary" onClick={this.saveAndContinue}>Upload!</button>
       </div>
     )
   }

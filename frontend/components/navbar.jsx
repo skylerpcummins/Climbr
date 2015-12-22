@@ -10,6 +10,10 @@ var Navbar = React.createClass({
     this.history.pushState(null, '/users/' + window.current_user_id, {});
   },
 
+  showPhotoFields: function(uploadedPhoto) {
+    this.history.pushState(uploadedPhoto, '/api/uploads', {});
+  },
+
   signOut: function(e) {
     e.preventDefault();
 
@@ -26,9 +30,10 @@ var Navbar = React.createClass({
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
       if (!error) {
-        PhotoActions.postUploadedPhoto(results[0]);
+        this.showPhotoFields(results[0])
+        // PhotoActions.postUploadedPhoto(results[0]); old way
       }
-    });
+    }.bind(this));
   },
 
   render: function() {
