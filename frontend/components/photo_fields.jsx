@@ -2,6 +2,7 @@ var React = require('react');
 var AreasAutocomplete = require('./areas_autocomplete');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var PhotoActions = require('../actions/photo_actions');
+var AreaStore = require('../stores/area');
 var History = require('react-router').History;
 
 var PhotoFields = React.createClass({
@@ -11,7 +12,7 @@ var PhotoFields = React.createClass({
     return {
       title: "",
       description: "",
-      area_name: "",
+      area_id: "",
       url: this.props.location.state.url,
       user_id: window.current_user_id
     };
@@ -20,12 +21,17 @@ var PhotoFields = React.createClass({
   saveAndContinue: function(e) {
     e.preventDefault();
 
+    this.state.area_id = AreaStore.findByName(this.state.area_id).id;
+
     PhotoActions.postUploadedPhoto(this.state);
     this.history.pushState(null, '/users/' + window.current_user_id, {});
   },
 
+  handleInput: function(areaName) {
+    this.setState({ area_id: areaName });
+  },
+
   render: function() {
-    console.log(this.state);
 
     return (
       <div className="jumbotron-upload" >
@@ -44,7 +50,7 @@ var PhotoFields = React.createClass({
 
           <div className="form-group">
             <label>Area
-              <AreasAutocomplete valueLink={this.linkState("area_name")} />
+              <AreasAutocomplete handleInput={this.handleInput} value={this.state.inputVal} />
             </label>
           </div>
         </form>

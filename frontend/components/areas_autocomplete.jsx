@@ -3,9 +3,6 @@ var ApiUtil = require('../util/api_util');
 var AreaStore = require('../stores/area');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
-var AreasList = [];
-var AreaNames = [];
-
 var AreasAutocomplete = React.createClass({
   mixins: [LinkedStateMixin],
 
@@ -59,6 +56,12 @@ var AreasAutocomplete = React.createClass({
   selectArea: function(e) {
     var area = e.currentTarget.innerText;
     this.setState({ inputVal: area });
+    this.props.handleInput(area);
+  },
+
+  _passPropsToPhotoFields: function(e) {
+    this.setState({ inputVal: e.currentTarget.value });
+    this.props.handleInput(e.currentTarget.value);
   },
 
   render: function() {
@@ -66,13 +69,16 @@ var AreasAutocomplete = React.createClass({
 
     var matchedAreas = results.map(function(result, idx) {
       return (
-        <li className="areas-list" key={idx} onClick={this.selectArea}>{result}</li>
+        <li className="areas-list" key={idx}
+          onClick={this.selectArea} >{result}</li>
       );
     }.bind(this));
 
     return (
       <div>
-        <input className="form-control" type="text" valueLink={this.linkState("inputVal")} />
+        <input className="form-control" type="text"
+          onChange={this._passPropsToPhotoFields}
+          value={this.state.inputVal} />
         <ul>{matchedAreas}</ul>
       </div>
     );
