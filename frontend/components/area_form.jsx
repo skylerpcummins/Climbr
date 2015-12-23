@@ -31,12 +31,12 @@ var AreaForm = React.createClass({
   },
 
   render: function() {
-    console.log(this.state);
 
     return (
       <div className="jumbotron-upload">
         <Map clickHandler={this.setCoords}/>
-        <h5>Add information about this area...</h5>
+        <br />
+        <h5>Click on the map to set the location of your area...</h5>
         <form className="form-group">
           <div className="form-group">
             <label>Area Name
