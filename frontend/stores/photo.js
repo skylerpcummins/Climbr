@@ -31,6 +31,12 @@ PhotoStore.find = function(id) {
   });
 };
 
+PhotoStore.findAreaPhoto = function(area_id) {
+  return _photos.find(function(photo) {
+    return photo.area_id === area_id
+  });
+};
+
 PhotoStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case PhotoConstants.PHOTOS_RECEIVED:
@@ -41,7 +47,7 @@ PhotoStore.__onDispatch = function (payload) {
       addSinglePhoto(payload.photo);
       PhotoStore.__emitChange();
       break;
-  }  
+  }
 };
 
 module.exports = PhotoStore;

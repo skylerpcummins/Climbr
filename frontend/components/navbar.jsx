@@ -10,6 +10,14 @@ var Navbar = React.createClass({
     this.history.pushState(null, '/users/' + window.current_user_id, {});
   },
 
+  showAreaCreate: function() {
+    this.history.pushState(null, '/api/areas/new', {});
+  },
+
+  showAreas: function() {
+    this.history.pushState(null, '/api/areas', {});
+  },
+
   showPhotoFields: function(uploadedPhoto) {
     this.history.pushState(uploadedPhoto, '/api/uploads', {});
   },
@@ -45,7 +53,13 @@ var Navbar = React.createClass({
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
               <li className="show-user"><a onClick={this.showUser}>You<span className="sr-only">(current)</span></a></li>
-              <li><a href="#">Explore</a></li>
+              <li className="dropdown">
+                <a href="" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore <span className="caret"></span></a>
+                  <ul className="dropdown-menu">
+                    <li className="show-user"><a onClick={this.showAreas}>Show Areas</a></li>
+                    <li className="show-user"><a onClick={this.showAreaCreate}>Create New Area</a></li>
+                </ul>
+              </li>
             </ul>
             <form className="navbar-form navbar-left" role="search">
               <div className="form-group">
@@ -58,8 +72,8 @@ var Navbar = React.createClass({
               <li className="dropdown">
                 <a href="" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span className="caret"></span></a>
                   <ul className="dropdown-menu">
-                  <li className="show-user"><a onClick={this.signOut}>Sign Out</a></li>
-                  <li className="show-user"><a onClick={this.showUser}>Profile</a></li>
+                    <li className="show-user"><a onClick={this.signOut}>Sign Out</a></li>
+                    <li className="show-user"><a onClick={this.showUser}>Profile</a></li>
                 </ul>
               </li>
             </ul>

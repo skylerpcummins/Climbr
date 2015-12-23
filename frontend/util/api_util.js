@@ -36,6 +36,22 @@ ApiUtil = {
     });
   },
 
+  createArea: function(area) {
+    var data = {
+      area: {
+        name: area.name,
+        description: area.description,
+        lat: area.lat,
+        lng: area.lng
+      }
+    };
+    $.post('/api/areas',
+      data,
+      function(savedArea) {
+        ApiActions.receiveOneArea(savedArea);
+    });
+  },
+
   fetchAreas: function() {
     $.get(
       'api/areas',

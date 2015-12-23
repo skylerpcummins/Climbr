@@ -97,6 +97,7 @@
   margin-left: 10px;
   height: 1500px;
   max-height: 90vh;
+  max-width: calc(100% - 450px);
 }
 
 .upload-button {
@@ -132,4 +133,33 @@
 
 .areas-list {
   cursor: pointer;
+}
+
+.upload-preview {
+  height: 600px;
+  max-height: 90vh;
+  max-width: 70vw;
+  margin-left: 10px;
+  float: left;
+}
+
+.areas-index-container {
+  text-align: center;
+}
+
+.area-photos-map {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.areas-masonry {
+  float: left;
+  width: 1500px;
+  max-width: calc(100% - 450px);
+}
+
+.area-title {
+  font-size: medium;
+  font-weight: bold;
 }

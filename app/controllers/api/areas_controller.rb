@@ -9,7 +9,11 @@ class Api::AreasController < ApplicationController
   end
 
   def index
-    @areas = Area.all
+    if params[:area_id]
+      @areas = Area.where(area_id: params[:area_id])
+    else
+      @areas = Area.all
+    end
 
     render :index
   end

@@ -35,28 +35,37 @@ var PhotoFields = React.createClass({
 
     return (
       <div className="jumbotron-upload" >
-        <img src={this.state.url} />
+        <img className="upload-preview" src={this.state.url} />
+        <h5>Add more information about your photo...</h5>
         <form className="form-group">
           <div className="form-group">
             <label>Title
-              <input className="form-control" type="text" valueLink={this.linkState("title")} />
+              <input className="form-control"
+                type="text"
+                valueLink={this.linkState("title")} />
             </label>
           </div>
 
           <div className="form-group">
             <label>Description
-              <input className="form-control" type="text" valueLink={this.linkState("description")} />
+              <input className="form-control"
+                type="text"
+                valueLink={this.linkState("description")} />
             </label>
           </div>
 
           <div className="form-group">
             <label>Area
-              <AreasAutocomplete handleInput={this.handleInput} value={this.state.inputVal} />
+              <AreasAutocomplete
+                handleInput={this.handleInput}
+                value={this.state.inputVal} />
             </label>
           </div>
         </form>
 
-        <button className="btn btn-primary" onClick={this.saveAndContinue}>Upload!</button>
+        <button className="btn btn-primary"
+          onClick={this.saveAndContinue}>Upload!
+        </button>
       </div>
     )
   }
