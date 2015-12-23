@@ -35,6 +35,7 @@ var PhotoFields = React.createClass({
 
     return (
       <div className="jumbotron-upload" >
+        <img src={this.state.url} />
         <form className="form-group">
           <div className="form-group">
             <label>Title

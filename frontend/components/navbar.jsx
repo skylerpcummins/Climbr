@@ -16,7 +16,7 @@ var Navbar = React.createClass({
 
   signOut: function(e) {
     e.preventDefault();
-
+    //put this in api_util
     $.ajax({
       url: "/session",
       method: "DELETE",

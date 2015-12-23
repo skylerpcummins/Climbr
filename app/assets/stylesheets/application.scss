@@ -64,6 +64,10 @@
   cursor: pointer;
 }
 
+.photo-index-image:hover {
+ //add stuff here
+}
+
 .user-index-image {
   margin: 10px 0px 0px 10px;
   width: 100%;
@@ -91,6 +95,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
+  height: 1500px;
   max-height: 90vh;
 }
 
