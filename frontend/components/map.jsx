@@ -28,7 +28,7 @@ var Map = React.createClass({
     if (typeof currentArea != 'undefined') {
       var newCenter = {lat: currentArea.lat, lng: currentArea.lng};
       this.map.panTo(newCenter);
-      this.map.setZoom(13);
+      this.map.setZoom(11);
     }
 
     this._removeMarkers(currentMarkers);
