@@ -65,7 +65,8 @@
 }
 
 .photo-index-image:hover {
- //add stuff here
+  opacity: .5;
+  -webkit-transition: opacity .2s;
 }
 
 .user-index-image {
@@ -73,6 +74,11 @@
   width: 100%;
   max-width: 300px;
   cursor: pointer;
+}
+
+.user-index-image:hover {
+  opacity: .5;
+  -webkit-transition: opacity .2s;
 }
 
 .container-map-photo {
