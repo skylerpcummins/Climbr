@@ -36,7 +36,7 @@ var PhotoItem = React.createClass({
     return (
         <div className="container-fluid-show">
           <div className="container-map-photo">
-            <img className="img-responsive"
+            <img className="photo-show"
               src={ this.state.photo.photo_url } />
             <Map areaId={this.state.photo.area_id} />
           </div>

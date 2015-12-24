@@ -43,7 +43,7 @@ var AreasIndex = React.createClass({
       if (typeof PhotoStore.findAreaPhoto(area.id) != 'undefined') {
         return (
           <div key={area.id} onClick={this.showArea}>
-            <img className="user-index-image"
+            <img className="areas-index-image"
               id={area.id}
               src={PhotoStore.findAreaPhoto(area.id).photo_url} />
             <div className="area-title">{area.name}</div>

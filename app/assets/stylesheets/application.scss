@@ -22,18 +22,21 @@
   background: transparentize(blue, .5);
   color: white;
   border-radius: 6px;
+  font-family: 'Doppio One', sans-serif;
 }
 
 .jumbotron-upload {
   text-align: center;
   color: black;
   border-radius: 6px;
+  font-family: 'Doppio One', sans-serif;
 }
 
 .climbr-title {
   margin-top: 130px;
   text-align: center;
   color: white;
+  font-family: 'Monoton', cursive;
 }
 
 .container-auth {
@@ -50,7 +53,12 @@
 
 .navbar {
   margin-bottom: 0;
-  font-weight: bold;
+  // font-weight: bold;
+  font-family: 'Doppio One', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Monoton', cursive;
 }
 
 .show-user {
@@ -96,14 +104,16 @@
   clear: both;
 }
 
-.img-responsive {
+.photo-show {
   float: left;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
-  height: 1500px;
+  display: block;
+  max-width: 2000px;
   max-height: 90vh;
-  max-width: calc(100% - 450px);
+  width: auto;
+  height: auto;
 }
 
 .upload-button {
@@ -130,6 +140,7 @@
   float: left;
   height: 2000px;
   max-height: 90vh;
+  min-height: 610px;
   width: 400px;
   margin-left: 10px;
   margin-top: 10px;
@@ -168,4 +179,16 @@
 .area-title {
   font-size: medium;
   font-weight: bold;
+}
+
+.areas-index-image {
+  margin: 10px 0px 0px 10px;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.areas-index-image:hover {
+  opacity: .5;
+  -webkit-transition: opacity .2s;
 }
