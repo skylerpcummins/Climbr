@@ -40,7 +40,7 @@ var AreaItem = React.createClass({
     var photosGrid = areaPhotos.map(function(photo) {
       return (
         <div key={photo.id} onClick={this.showPhoto}>
-          <img className="photo-index-image" id={photo.id} src={photo.photo_url} />
+          <img className="photo-index-image" id={[photo.id, photo.area_id]} src={photo.photo_url} />
         </div>
       );
     }.bind(this));

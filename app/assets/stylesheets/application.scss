@@ -111,7 +111,7 @@
   margin-left: 10px;
   display: block;
   max-width: 60vw;
-  max-height: 87vh;
+  max-height: 83vh;
   width: auto;
   height: auto;
 }
@@ -214,4 +214,8 @@
 
 .map-form {
   margin-top: 50px;
+}
+
+.photo-show-area:hover {
+  cursor: pointer;
 }

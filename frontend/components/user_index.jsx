@@ -34,7 +34,7 @@ var UserIndex = React.createClass({
     var photosGrid = this.state.photos.map( function(photo) {
       return (
         <div key={photo.id} onClick={this.showPhoto}>
-          <img className="user-index-image" id={photo.id} src={photo.photo_url} />
+          <img className="user-index-image" id={[photo.id, photo.area_id]} src={photo.photo_url} />
         </div>
       );
     }.bind(this));

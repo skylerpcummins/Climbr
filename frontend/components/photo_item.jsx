@@ -2,11 +2,18 @@ var React = require('react');
 var PhotoStore = require('../stores/photo');
 var ApiUtil = require('../util/api_util');
 var Map = require('./map');
+var AreaStore = require('../stores/area');
+var History = require('react-router').History;
 
 var PhotoItem = React.createClass({
+  mixins: [History],
 
   getStateFromStore: function() {
-    return { photo: PhotoStore.find(parseInt(this.props.params.id)) };
+    var vals = this.props.params.id.split(",");
+
+    return { photo: PhotoStore.find(parseInt(vals[0])),
+             area: AreaStore.find(parseInt(vals[1]))
+           };
   },
 
   _onChange: function() {
@@ -18,20 +25,35 @@ var PhotoItem = React.createClass({
   },
 
   componentWillReceiveProps: function(newProps) {
-    ApiUtil.fetchSinglePhoto(parseInt(newProps.params.id));
+    var vals = newProps.params.id.split(",");
+
+    ApiUtil.fetchSinglePhoto(parseInt(vals[0]));
+    ApiUtil.fetchAreas();
   },
 
   componentWillUnmount: function() {
     this.photoItemToken.remove();
+    this.areasToken.remove();
   },
 
   componentDidMount: function() {
+    var vals = this.props.params.id.split(",");
     this.photoItemToken = PhotoStore.addListener(this._onChange);
-    ApiUtil.fetchSinglePhoto(this.props.params.id);
+    this.areasToken = AreaStore.addListener(this._onChange);
+    ApiUtil.fetchSinglePhoto(vals[0]);
+    ApiUtil.fetchAreas();
+  },
+
+  showArea: function(e) {
+    // debugger;
+    this.history.pushState({area_id: this.state.area.id},
+      'api/areas/' + this.state.area.id,
+      {});
   },
 
   render: function() {
     if (typeof this.state.photo === 'undefined') { return <div></div>; }
+    if (typeof this.state.area === 'undefined') { return <div></div>; }
 
     return (
         <div className="container-fluid-show">
@@ -39,8 +61,12 @@ var PhotoItem = React.createClass({
             <div className="photo-description">
               <img className="photo-show"
                 src={ this.state.photo.photo_url } />
-              <br/>
-              Title: {this.state.photo.title}
+              <div>
+                Title: {this.state.photo.title}
+              </div>
+              <div className="photo-show-area" onClick={this.showArea}>
+                Area: {this.state.area.name}
+              </div>
             </div>
             <Map areaId={this.state.photo.area_id} />
           </div>
