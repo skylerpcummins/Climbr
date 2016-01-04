@@ -2,28 +2,22 @@
 
 www.climbr.xyz
 
-[Heroku link][heroku]
-
-[heroku]: https://www.climbr.xyz
-
-## Minimum Viable Product
+# Application Description
 
 Flickr-inspired climbing-photo uploading / sharing website with
 geotagging functionality to identify photos by climbing area.
 Climbr allows users to:
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
-
 - [x] Create account
 - [x] Log in / out
-- [ ] Upload / remove photos
-- [ ] Create climbing area, add / remove photos
+- [x] Upload photos
+- [x] Create climbing area, add photos to area
 - [x] View image index page
 - [x] View image show page
 - [x] View user show page
-- [ ] View area show page
-- [ ] Geotag images
-- [ ] Search / filter images by climbing area
+- [x] View area show page
+- [x] Geotag images via area
+- [x] Filter images by climbing area
 
 ## Design Docs
 * [View Wireframes][view]
@@ -34,7 +28,7 @@ Climbr allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Photo, Comment, models and JSON API (1-2 days)
+### Phase 1: User Authentication, Photo models and JSON API (1-2 days)
 
 In phase 1, I will start with the rails backend and some JSON API. After signing up/logging in, the user will be redirected to the photos index page, which will have a container for photos on the left, and one for the map on the left (to be built later).
 
@@ -48,7 +42,7 @@ Phase 2 will primarily consist of getting Flux, the React Router and view struct
 
 [Details][phase-two]
 
-### Phase 3: Areas and Tags (2-3 days)
+### Phase 3: Areas (2-3 days)
 
 In Phase 3 I will implement Areas, allowing users to group photos by climbing area.
 
@@ -60,16 +54,11 @@ Implement google maps API a-la Bench-BnB.
 
 [Details][phase-four]
 
-### Phase 5: Styling (its gonna take a whiiiile)
+### Phase 5: Styling
 
 Lots of bootstrap and CSS here, though I may implement some earlier on depending on how things are looking.
 
 [Details][phase-five]
-
-### Bonus Features (TBD)
-<!-- - [ ] Prettify transitions
-- [ ] Use javascript library for cleaner tag selection
-- [ ] Infinite scroll for Photos Index -->
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
