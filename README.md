@@ -1,8 +1,10 @@
 # Climbr
 
+https://www.climbr.xyz
+
 [Heroku link][heroku]
 
-[heroku]: https://climbrproject.herokuapp.com
+[heroku]: https://www.climbr.xyz
 
 ## Minimum Viable Product
 
