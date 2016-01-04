@@ -1,6 +1,6 @@
 # Climbr
 
-https://www.climbr.xyz
+www.climbr.xyz
 
 [Heroku link][heroku]
 
