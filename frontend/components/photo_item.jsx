@@ -36,8 +36,12 @@ var PhotoItem = React.createClass({
     return (
         <div className="container-fluid-show">
           <div className="container-map-photo">
-            <img className="photo-show"
-              src={ this.state.photo.photo_url } />
+            <div className="photo-description">
+              <img className="photo-show"
+                src={ this.state.photo.photo_url } />
+              <br/>
+              Title: {this.state.photo.title}
+            </div>
             <Map areaId={this.state.photo.area_id} />
           </div>
         </div>

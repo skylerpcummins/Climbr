@@ -34,7 +34,9 @@ var AreaForm = React.createClass({
 
     return (
       <div className="jumbotron-upload">
-        <Map clickHandler={this.setCoords}/>
+        <div className="map-form">
+          <Map clickHandler={this.setCoords}/>
+        </div>
         <br />
         <h5>Click on the map to set the location of your area...</h5>
         <form className="form-group">
@@ -52,6 +54,10 @@ var AreaForm = React.createClass({
                 type="text"
                 valueLink={this.linkState("description")}/>
             </label>
+          </div>
+
+          <div>
+            Current Coordinates: {this.state.lat}, {this.state.lng}
           </div>
         </form>
 

@@ -70,7 +70,7 @@ var Map = React.createClass({
 
   render: function() {
     return (
-      <div className="map" ref="map">Map</div>
+      <div className="map" ref="map"></div>
     );
   }
 });

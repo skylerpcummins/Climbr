@@ -44,7 +44,7 @@ var Navbar = React.createClass({
   render: function() {
 
     return (
-      <nav className="navbar navbar-default">
+      <nav className="navbar navbar-default navbar-fixed-top">
         <div className="container-fluid">
           <div className="navbar-header">
             <a className="navbar-brand" href="#">climbr</a>
@@ -61,12 +61,6 @@ var Navbar = React.createClass({
                 </ul>
               </li>
             </ul>
-            <form className="navbar-form navbar-left" role="search">
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Search" />
-              </div>
-              <button type="submit" className="btn btn-default">Submit</button>
-            </form>
             <ul className="nav navbar-nav navbar-right">
               <li className="upload-button"><a onClick={this.uploadPhoto}>Upload</a></li>
               <li className="dropdown">

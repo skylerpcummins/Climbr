@@ -56,9 +56,13 @@ var AreasIndex = React.createClass({
       <div className="areas-index-container">
         <div className="area-photos-map">
           <div className="areas-masonry">
-            <Masonry>{areasGrid}</Masonry>
+            <Masonry className="photos-grid">
+              {areasGrid}
+            </Masonry>
           </div>
-          <Map />
+          <div className="map-fixed">
+            <Map />
+          </div>
         </div>
       </div>
     );

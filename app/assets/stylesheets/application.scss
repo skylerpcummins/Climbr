@@ -53,7 +53,6 @@
 
 .navbar {
   margin-bottom: 0;
-  // font-weight: bold;
   font-family: 'Doppio One', sans-serif;
 }
 
@@ -90,6 +89,7 @@
 }
 
 .container-map-photo {
+  margin-top: 50px;
   display: inline-block;
 }
 
@@ -110,8 +110,8 @@
   margin-bottom: 10px;
   margin-left: 10px;
   display: block;
-  max-width: 2000px;
-  max-height: 90vh;
+  max-width: 60vw;
+  max-height: 87vh;
   width: auto;
   height: auto;
 }
@@ -121,7 +121,7 @@
 }
 
 .cover-photo {
-  margin-top: 10px;
+  margin-top: 40px;
   background-image: url(user_panorama.jpg);
   height: 30vh;
   max-width: auto;
@@ -134,12 +134,13 @@
   bottom: 10px;
   left: 10px;
   font-weight: bold;
+  color: white;
 }
 
 .map {
   float: left;
   height: 2000px;
-  max-height: 90vh;
+  max-height: 85vh;
   min-height: 610px;
   width: 400px;
   margin-left: 10px;
@@ -191,4 +192,26 @@
 .areas-index-image:hover {
   opacity: .5;
   -webkit-transition: opacity .2s;
+}
+
+.photo-description {
+  color: white;
+  float: left;
+  font-family: 'Doppio One', sans-serif;
+}
+
+.map-fixed {
+  position: fixed;
+  float: right;
+  left: 65vw;
+  right: 10px;
+  top: 50px;
+}
+
+.photos-grid {
+  margin-top: 50px;
+}
+
+.map-form {
+  margin-top: 50px;
 }

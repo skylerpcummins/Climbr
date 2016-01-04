@@ -44,7 +44,9 @@ var PhotoIndex = React.createClass({
       );
     }.bind(this));
 
-    return ( <Masonry>{photosGrid}</Masonry> );
+    return ( <Masonry className="photos-grid">
+              {photosGrid}
+            </Masonry> );
   }
 });
 

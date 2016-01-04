@@ -49,9 +49,13 @@ var AreaItem = React.createClass({
       <div className="areas-index-container">
         <div className="area-photos-map">
           <div className="areas-masonry">
-            <Masonry>{photosGrid}</Masonry>
+            <Masonry className="photos-grid">
+              {photosGrid}
+            </Masonry>
           </div>
-          <Map areaId={parseInt(this.props.params.id)}/>
+          <div className="map-fixed">
+            <Map areaId={parseInt(this.props.params.id)}/>
+          </div>
         </div>
       </div>
     );
