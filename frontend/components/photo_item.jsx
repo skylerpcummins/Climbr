@@ -45,7 +45,6 @@ var PhotoItem = React.createClass({
   },
 
   showArea: function(e) {
-    // debugger;
     this.history.pushState({area_id: this.state.area.id},
       'api/areas/' + this.state.area.id,
       {});
