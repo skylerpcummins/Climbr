@@ -52,7 +52,6 @@ var PhotoItem = React.createClass({
 
   render: function() {
     if (typeof this.state.photo === 'undefined') { return <div></div>; }
-    // if (typeof this.state.area === 'undefined') { return <div></div>; }
     var areaName = typeof this.state.area === 'undefined' ? "this photo has no associated area" : this.state.area.name
 
     return (
