@@ -52,7 +52,8 @@ var PhotoItem = React.createClass({
 
   render: function() {
     if (typeof this.state.photo === 'undefined') { return <div></div>; }
-    if (typeof this.state.area === 'undefined') { return <div></div>; }
+    // if (typeof this.state.area === 'undefined') { return <div></div>; }
+    var areaName = typeof this.state.area === 'undefined' ? "this photo has no associated area" : this.state.area.name
 
     return (
         <div className="container-fluid-show">
@@ -64,7 +65,7 @@ var PhotoItem = React.createClass({
                 Title: {this.state.photo.title}
               </div>
               <div className="photo-show-area" onClick={this.showArea}>
-                Area: {this.state.area.name}
+                Area: {areaName}
               </div>
             </div>
             <Map areaId={this.state.photo.area_id} />
