@@ -27,24 +27,3 @@ description  | text      | not null
 lat          | float     | not null
 lng          | float     | not null
 moderator_id | float     | not null, foreign key (references users), indexed
-
-## comments
-column name  |           | details
--------------|-----------|----------------------
-id           | integer   | not null, primary key
-photo_id     | integer   | not null, foreign key (references photos), indexed
-user_id      | integer   | not null, foreign key (references users), indexed
-body         | text      | not null
-
-## tags
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-label       | string    | not null
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-photo_id    | integer   | not null, foreign key (references photos), indexed
-tag_id      | integer   | not null, foreign key (references tags), indexed

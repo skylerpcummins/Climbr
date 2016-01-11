@@ -8,22 +8,20 @@ Flickr-inspired climbing-photo uploading / sharing website with
 geotagging functionality to identify photos by climbing area.
 Climbr allows users to:
 
-- [x] Create account
-- [x] Log in / out
-- [x] Upload photos
-- [x] Create climbing area, add photos to area
-- [x] View image index page
-- [x] View image show page
-- [x] View user show page
-- [x] View area show page
-- [x] Geotag images via area
-- [x] Filter images by climbing area
+- * Create account
+- * Log in / out
+- * Upload photos
+- * Create climbing area, add photos to area
+- * View image index page
+- * View image show page
+- * View user show page
+- * View area show page
+- * Geotag images via area
+- * Filter images by climbing area
 
 ## Design Docs
-* [View Wireframes][view]
 * [DB schema][schema]
 
-[view]: ./docs/views.md
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
