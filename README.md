@@ -24,42 +24,35 @@ Climbr allows users to:
 
 [schema]: ./docs/schema.md
 
-## Implementation Timeline
+## App Components
 
-### Phase 1: User Authentication, Photo models and JSON API (1-2 days)
+Climbr is built on React.js and follows the Flux unidirectional data flow pattern. For example, if a user interacts with the area creation form to add a new climbing area, an AJAX request will be issued to POST a new area. Upon success, the resultant data is passed to the appropriate 'store'. The store then emits a notification to any reliant components, which in turn pass more data to the appropriate stores. This continues until the page is fully updated.
 
-In phase 1, I will start with the rails backend and some JSON API. After signing up/logging in, the user will be redirected to the photos index page, which will have a container for photos on the left, and one for the map on the left (to be built later).
+### User Authentication
 
+Climbr makes use of BCrypt to hash and salt passwords, creating a password_digest, which is stored in the database. Session tokens are generated using SecureRandom. Measures are taken to guarantee that any two session tokens are never the same. These steps ensure secure login, and that users cannot be logged in from more than one device at a time.
 
+### Index Pages
 
-[Details][phase-one]
+The various photo index pages (index, area, user) are built using the React Masonry Component library. The React Masonry Component library automatically finds the optimal arrangement for a group of photos of different aspects. Clicking on a photo on the main index page or on the user index page activates the React Router, which triggers the proper re-rendering to end up at the photo show page. Clicking on a photo on the areas index page also activates the React Router, and renders the proper area show page.
 
-### Phase 2: Flux Architecture and Photo CRUD (2 days)
+### Photo Show Page
 
-Phase 2 will primarily consist of getting Flux, the React Router and view structure for the main application. Probably will do a lot of seeding here.
+The photo show page renders the photo in an optimal size, as well as a map with a marker representing the proper climbing area. The photo show page also displays the photo title, and a link to the area that the photo was tagged with.
 
-[Details][phase-two]
+### Area Creation Page
 
-### Phase 3: Areas (2-3 days)
+The area creation page renders a map, as well as a form to supply the necessary information for adding a new climbing area. Clicking on the map supplies GPS coordinates for the area. After creating the area, users must navigate to the photo upload form to add an image for their new area before it will show up in the areas index page.
 
-In Phase 3 I will implement Areas, allowing users to group photos by climbing area.
+### Photo Upload form
 
-[Details][phase-three]
+The photo upload form first renders the Cloudinary upload widget, where users can drag and drop or browse for the photos that they wish to upload. After uploading the photo, the users are presented with a form to add the remaining necessary information for uploading a photo to Climbr.
 
-### Phase 4: Maps (1-2 days)
+### Future
 
-Implement google maps API a-la Bench-BnB.
+I am always open to suggestions for how to improve Climbr. Some of the things I would like to change/add in the future are:
 
-[Details][phase-four]
-
-### Phase 5: Styling
-
-Lots of bootstrap and CSS here, though I may implement some earlier on depending on how things are looking.
-
-[Details][phase-five]
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+- Make map interactive.
+- Improve UX of site navigation.
+- Redirect to photo upload form after area creation.
+- Add tagging functionality.
