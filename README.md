@@ -36,7 +36,7 @@ Climbr makes use of BCrypt to hash and salt passwords, creating a password_diges
 
 The various photo index pages (index, area, user) are built using the React Masonry Component library. The React Masonry Component library automatically finds the optimal arrangement for a group of photos of different aspects. Clicking on a photo on the main index page or on the user index page activates the React Router, which triggers the proper re-rendering to end up at the photo show page. Clicking on a photo on the areas index page also activates the React Router, and renders the proper area show page.
 
-![Alt text](./app/assets/images/masonry_example.png?raw=true)
+![Alt text](./app/assets/images/masonry_example.png?raw=true "Masonry arranges the photos on index pages.")
 
 ### Photo Show Page
 
